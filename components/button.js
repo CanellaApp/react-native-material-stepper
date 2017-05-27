@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { Text, View, TouchableNativeFeedback } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
+const padding = { padding: 16 } 
+
 export default class Button extends Component {
 
     buttons = {
@@ -30,9 +32,11 @@ export default class Button extends Component {
         components[0] = type === 'back' ? icon : description
         components[1] = type === 'back' ? description : icon
 
+        const style = { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16 }
+
         return (
             <TouchableNativeFeedback onPress={this.props.onPress}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <View style={style}>
                     {components[0]}
                     <View style={{ marginRight: 5 }} />
                     {components[1]}

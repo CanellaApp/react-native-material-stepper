@@ -67,7 +67,7 @@ export default class Controls extends Component {
         }
 
         return (
-            <View style={{ backgroundColor, ...grid, paddingTop: 16, paddingBottom: 16, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{ backgroundColor, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Button type="back" onPress={this.back}  {...buttonStyle} />
                 <Dots selectedDot={this.state.currentStep} numberOfDots={this.props.numberOfSteps} activedColor={activatedDotColor} desactivatedColor={desactivatedDotColor} />
                 <Button type="next" onPress={this.next} {...buttonStyle} />
