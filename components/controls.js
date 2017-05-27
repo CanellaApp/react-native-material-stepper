@@ -49,6 +49,8 @@ export default class Controls extends Component {
 
 
     render() {
+        const { style = {} } = this.props
+
         const {
             activatedDotColor,
             textFontFamily,
@@ -57,7 +59,7 @@ export default class Controls extends Component {
             backgroundColor,
             desactivatedDotColor = 'hsl(0, 0%, 69%)',
             arrowIconSize = 15,
-        } = this.props.style
+        } = style
 
         const buttonStyle = {
             fontFamily: textFontFamily,

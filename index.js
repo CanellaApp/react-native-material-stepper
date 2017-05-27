@@ -19,6 +19,8 @@ export default class MaterialStepper extends Component {
             PropTypes.element
         ]).isRequired,
 
+        onChangeStep: PropTypes.func,
+
         controlsStyle: PropTypes.shape({
             activatedDotColor: PropTypes.string,
             textFontFamily: PropTypes.string,
@@ -35,6 +37,10 @@ export default class MaterialStepper extends Component {
     }
 
     onChangeStep = (toDirection, stepIndex) => {
+        const {onChangeStep} = this.props
+
+        onChangeStep && onChangeStep({ direction: toDirection, stepIndex })
+
         if (toDirection === 'forward') {
             try {
                 const step = this.steps[stepIndex]

@@ -24,6 +24,6 @@ const style = {
 }
 
 export default function App() {
-    return <Stepper onEnd={() => alert('END!!')} controlsStyle={style}>{steps}</Stepper>
+    return <Stepper onEnd={() => alert('END!!')} controlsStyle={style} onChangeStep={(data)=>console.log(data)}>{steps}</Stepper>
 }
 
